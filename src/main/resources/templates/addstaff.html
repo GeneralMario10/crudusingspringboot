@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new staff</title>
+</head>
+<body>
+    <h2>Add New Staff </h2>
+    <div class="center-screen">
+    <form method="post" th:object="${newstaff}" th:action="@{/dataSubmitForm}">
+        <label for="Staff Name">Staff Name</label><br>
+        <input type="text" placeholder="Staff Name" th:field="*{staffName}"><br>
+        <a style="color: red;" th:errors="*{staffName}"></a><br><br>
+        
+        <label for="Staff Title">Staff Title</label><br>
+        <input type="text" placeholder="Staff Title" th:field="*{staffTitle}"><br>
+        <a style="color: red;" th:errors="*{staffTitle}"></a><br><br>
+        <label for="Staff Salary">Staff Salary</label><br>
+        <input type="text" placeholder="Staff Salary"th:field="*{salary}" ><br><br>
+        <a style="color: red;" th:errors="*{salary}"></a><br><br>
+        <input type="hidden"th:field="*{id}">  
+        <br><br>
+        <input type="submit" value="Submit">
+    </form> 
+      
+      <p>If you click the "Submit" button, the form-data will be sent to a page called "/GetStaffDetails".</p>
+    </div>
+</body>
+</html>

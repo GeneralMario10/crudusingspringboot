@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details of Staff</title>
+</head>
+<style>
+   table, th, td{
+    border: 1px solid black;
+   } 
+</style>
+<body>
+    <h2>this page of StaffDetails</h2>
+    <table style="width: 50%;">
+        <tr>
+            <th>Staff Name</th>
+            <th>Staff Title</th>
+            <th>Staff Salary</th>
+        </tr>
+        <tr th:each="oneStaff:${allStaff}">
+            <td th:text="${oneStaff.staffName}"></td>
+            <td th:text="${oneStaff.staffTitle}"></td>
+            <td th:text="${oneStaff.salary}"></td>
+            <td><a role="button" th:href="@{/(id=${oneStaff.id})}">Update</a></td>
+        </tr>
+    </table>
+    <p>
+        <a th:href="@{/}">Add New Staff</a><br><br>
+    </p>
+</body>
+</html>
